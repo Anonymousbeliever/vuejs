@@ -5,7 +5,7 @@
     <router-link to="/services">Services</router-link>
   </nav>
   <router-view />
-  <footer><p>footer</p></footer>
+
 </template>
 
 <style>
