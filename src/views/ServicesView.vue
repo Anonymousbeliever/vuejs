@@ -16,14 +16,15 @@
 
     <!-- ARRAYS -->
     <!-- <p v-for="(fruit, index) in fruits" :key="index">{{ fruit }}</p> -->
-     <!-- <h1>Blogs</h1>
+    <h1>Blogs</h1>
+    <img v-bind:src="imgurl" alt="" srcset="" />
     <div class="parent">
       <div v-for="(blog, index) in blogs" :key="index" class="card">
-          <h3>{{ blog.id }}</h3>
-          <h4>{{ blog.title }}</h4>
-          <p>{{ blog.body }}</p>
-        </div>
-    </div> -->
+        <h3>{{ blog.id }}</h3>
+        <h4>{{ blog.title }}</h4>
+        <p>{{ blog.body }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,31 +39,18 @@ export default {
       // smartphones: 4,
       //   day: "monday",
       //   fruits: ["oranges", "mangoes", "bananas", "apples"],
-      // blogs: [
-      //   {
-      //     id: 1,
-      //     title: "rtyu",
-      //     body: "sdfghjkjhgfd",
-      //   },
-      //   {
-      //     id: 2,
-      //     title: "refdsu",
-      //     body: "ertyuiomnb",
-      //   },
-      //   {
-      //     id: 3,
-      //     title: "urjkdnmc",
-      //     body: "sdfguikm",
-      //   },      
-       
-      // ],
-        mounted(){
-    // alert("hey");
-    fetch('https://jsonplaceholder.typicode.com//posts')
-    .then(response => response.json() )
-    .then(json => console.log(json));
-   },
+      blogs: [],
+      imgurl: "https://i.ytimg.com/vi/hh2nu3Jn9EI/maxresdefault.jpg"
     };
+  },
+  mounted() {
+    // alert("hey");
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      // .then(json => console.log(json));
+      .then((data) => {
+        this.blogs = data;
+      });
   },
 };
 </script>
