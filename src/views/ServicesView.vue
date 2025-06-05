@@ -17,12 +17,13 @@
     <!-- ARRAYS -->
     <!-- <p v-for="(fruit, index) in fruits" :key="index">{{ fruit }}</p> -->
     <h1>Blogs</h1>
-    <img v-bind:src="imgurl" alt="" srcset="" />
+    <!-- <img v-bind:src="imgurl" alt="" srcset="" /> -->
     <div class="parent">
       <div v-for="(blog, index) in blogs" :key="index" class="card">
         <h3>{{ blog.id }}</h3>
         <h4>{{ blog.title }}</h4>
-        <p>{{ blog.body }}</p>
+        <p>{{ blog.price }}</p>
+        <img v-bind:src="blog.image" alt="">
       </div>
     </div>
   </div>
@@ -40,12 +41,12 @@ export default {
       //   day: "monday",
       //   fruits: ["oranges", "mangoes", "bananas", "apples"],
       blogs: [],
-      imgurl: "https://i.ytimg.com/vi/hh2nu3Jn9EI/maxresdefault.jpg"
+      imgurl: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
     };
   },
   mounted() {
     // alert("hey");
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       // .then(json => console.log(json));
       .then((data) => {
@@ -65,5 +66,9 @@ export default {
   margin: 5px;
   padding: 5px;
   width: 250px;
+}
+img{
+  width: 200px;
+  height: 200px;
 }
 </style>
