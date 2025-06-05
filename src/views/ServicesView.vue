@@ -16,14 +16,14 @@
 
     <!-- ARRAYS -->
     <!-- <p v-for="(fruit, index) in fruits" :key="index">{{ fruit }}</p> -->
-     <h1>Blogs</h1>
+     <!-- <h1>Blogs</h1>
     <div class="parent">
       <div v-for="(blog, index) in blogs" :key="index" class="card">
           <h3>{{ blog.id }}</h3>
           <h4>{{ blog.title }}</h4>
           <p>{{ blog.body }}</p>
         </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -38,68 +38,30 @@ export default {
       // smartphones: 4,
       //   day: "monday",
       //   fruits: ["oranges", "mangoes", "bananas", "apples"],
-      blogs: [
-        {
-          id: 1,
-          title: "rtyu",
-          body: "sdfghjkjhgfd",
-        },
-        {
-          id: 2,
-          title: "refdsu",
-          body: "ertyuiomnb",
-        },
-        {
-          id: 3,
-          title: "urjkdnmc",
-          body: "sdfguikm",
-        },
-        {
-          id: 1,
-          title: "rtyu",
-          body: "sdfghjkjhgfd",
-        },
-        {
-          id: 2,
-          title: "refdsu",
-          body: "ertyuiomnb",
-        },
-        {
-          id: 3,
-          title: "urjkdnmc",
-          body: "sdfguikm",
-        },
-        {
-          id: 1,
-          title: "rtyu",
-          body: "sdfghjkjhgfd",
-        },
-        {
-          id: 2,
-          title: "refdsu",
-          body: "ertyuiomnb",
-        },
-        {
-          id: 3,
-          title: "urjkdnmc",
-          body: "sdfguikm",
-        },
-        {
-          id: 1,
-          title: "rtyu",
-          body: "sdfghjkjhgfd",
-        },
-        {
-          id: 2,
-          title: "refdsu",
-          body: "ertyuiomnb",
-        },
-        {
-          id: 3,
-          title: "urjkdnmc",
-          body: "sdfguikm",
-        },
-      ],
+      // blogs: [
+      //   {
+      //     id: 1,
+      //     title: "rtyu",
+      //     body: "sdfghjkjhgfd",
+      //   },
+      //   {
+      //     id: 2,
+      //     title: "refdsu",
+      //     body: "ertyuiomnb",
+      //   },
+      //   {
+      //     id: 3,
+      //     title: "urjkdnmc",
+      //     body: "sdfguikm",
+      //   },      
+       
+      // ],
+        mounted(){
+    // alert("hey");
+    fetch('https://jsonplaceholder.typicode.com//posts')
+    .then(response => response.json() )
+    .then(json => console.log(json));
+   },
     };
   },
 };
